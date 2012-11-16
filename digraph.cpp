@@ -16,24 +16,25 @@ int main() {
 	dgPointer->addNode(2);
 	dgPointer->addNode(3);
 	//dgPointer->printGraph();
-	dgPointer->addLink(1,0);
-	dgPointer->addLink(2,1);
-	dgPointer->addLink(2,0);
-	dgPointer->addLink(0,2);
-	dgPointer->addLink(2,3);
-	dgPointer->addLink(3,2);
-	dgPointer->addLink(1,3);
-	dgPointer->addLink(0,3);
+	dgPointer->addArc(1,1,4);
+	dgPointer->addArc(2,1,6);
+	dgPointer->addArc(2,0,4);
+	dgPointer->addArc(0,2,5);
+	dgPointer->addArc(2,3,8);
+	dgPointer->addArc(3,2,2);
+	dgPointer->addArc(1,3,4);
+	dgPointer->addArc(0,3,9);
 	dgPointer->printGraph();
 
 	cout << endl << "Removing node 2!" << endl;
 
 	dgPointer->removeNode(2);
 	dgPointer->printGraph();
-	cout << endl << "Removing node 0!" << endl;
+	cout << endl << "Removing node 3!" << endl;
+	dgPointer->removeNode(3);
+	dgPointer->printGraph();
 	dgPointer->removeNode(0);
 	dgPointer->removeNode(1);
-	dgPointer->removeNode(0);
 
 	dgPointer->printGraph();
 
