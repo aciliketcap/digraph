@@ -6,6 +6,8 @@ It stores arcs (directed edges) in linked lists.
 
 It supports weighted graphs, self-pointing arcs, multiple arcs from one node to another.
 
-Currently it doesn't do much. I'm adding a shortest path algorithm which uses a queue and utilizes breadth-first search (so-called Dijkstra method). I don't know what to add after that though. Maybe A* path finding or maybe some connectivity checking, depth-first search. I don't know.
+I also added shortest path finding (non-weighted) by using Dijkstra's algorithm. I'll add weighted version too. Maybe I can add A* after that.
 
-There is more to be said but I guess comments inside code should be enough. I am also writing a detailed blog post, will write the address here.
+More functionality would be nice, like connectivity checking, depth-first search etc. I don't know if I'll have time for those though.
+
+There is more to be said but I guess comments inside the source should be enough. I am also writing a detailed blog post, will write the address here.

@@ -7,36 +7,39 @@
 
 #include "digraph.h"
 
-digraph<int> *dgPointer;
+digraph<char> *dgPointer;
 
 int main() {
-	dgPointer = new digraph<int>();
-	dgPointer->addNode(0);
-	dgPointer->addNode(1);
-	dgPointer->addNode(2);
-	dgPointer->addNode(3);
-	//dgPointer->printGraph();
-	dgPointer->addArc(1,1,4);
-	dgPointer->addArc(2,1,6);
-	dgPointer->addArc(2,0,4);
-	dgPointer->addArc(0,2,5);
-	dgPointer->addArc(2,3,8);
-	dgPointer->addArc(3,2,2);
-	dgPointer->addArc(1,3,4);
-	dgPointer->addArc(0,3,9);
+	dgPointer = new digraph<char>();
+	dgPointer->addNode('A'); //0
+	dgPointer->addNode('B'); //1
+	dgPointer->addNode('C'); //2
+	dgPointer->addNode('D'); //3
+	dgPointer->addNode('E'); //4
+	dgPointer->addNode('F'); //5
+	dgPointer->addNode('G'); //6
+	dgPointer->addNode('H'); //7
+	dgPointer->addNode('I'); //8
+
+	dgPointer->addArc(0,1);
+	dgPointer->addArc(0,3);
+	dgPointer->addArc(0,4);
+	dgPointer->addArc(1,5);
+	dgPointer->addArc(2,1);
+	dgPointer->addArc(2,3);
+	dgPointer->addArc(3,2);
+	dgPointer->addArc(3,7);
+	dgPointer->addArc(4,7);
+	dgPointer->addArc(5,6);
+	dgPointer->addArc(6,1);
+	dgPointer->addArc(6,2);
+	dgPointer->addArc(8,7);
+	dgPointer->addArc(7,6);
+	dgPointer->addArc(7,3);
+
 	dgPointer->printGraph();
 
-	cout << endl << "Removing node 2!" << endl;
-
-	dgPointer->removeNode(2);
-	dgPointer->printGraph();
-	cout << endl << "Removing node 3!" << endl;
-	dgPointer->removeNode(3);
-	dgPointer->printGraph();
-	dgPointer->removeNode(0);
-	dgPointer->removeNode(1);
-
-	dgPointer->printGraph();
+	dgPointer->solveShortestPath(7,1);
 
 
 	return 0;
