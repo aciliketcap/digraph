@@ -557,8 +557,7 @@ void digraph<elementType>::solveShortestPath(int beginNode, int endNode) {
 			}
 			cerr << "Visiting node number: " << visitIndex << endl;
 			dgNode** arcList = new dgNode*[visitNode->getNumArcs()]; //dynamically allocate an array of dgNode pointers
-			visitNode->getArcToList(arcList);
-			//TODO: using a function like getArcFromList (below) may be better
+			visitNode->getArcToList(arcList); //TODO: using a function like getArcFromList (below) may be better
 			for(int i=0; i < visitNode->getNumArcs();i++) {
 				//if it is unvisited or were visited on a longer path,
 				//adjust the node's distance to current max distance +1 (max distance + weight in weighted version)
@@ -586,11 +585,9 @@ void digraph<elementType>::solveShortestPath(int beginNode, int endNode) {
 	}
 	//Now that the endNode is visited and nodes leading to that have their distances determined
 	//We can now reconstruct the way back home!
-	//TODO: collect the node pointers in an array and return that
-	//But to do that in weighted world we need to count the number of steps we took above (no problem if distance==1 for all arcs, then numSteps==distance)
 	int shpath[distance+1];
 	shpath[distance] = endNode;
-	cout << "Shortest path distance is: " << distance << endl;
+	cout << "Shortest path distance is: " << distance+1 << endl;
 
 	for(int i=distance; i>0; i--) {
 		dgNode *curNode; //current node we have, we are trying to find a predecessor to it
@@ -609,6 +606,8 @@ void digraph<elementType>::solveShortestPath(int beginNode, int endNode) {
 		delete retArcList;
 	}
 
+	//TODO: collect the node pointers in an array and return that
+	//But to do that in weighted graph we need to count the number of steps we took above (no problem if distance==1 for all arcs, then numSteps==distance)
 	cout << "path in correct order would be: " << endl;
 	for(int i=0; i<=distance; i++) cout << shpath[i] << " ";
 	cout << endl;

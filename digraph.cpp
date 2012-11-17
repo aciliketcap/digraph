@@ -39,7 +39,20 @@ int main() {
 
 	dgPointer->printGraph();
 
-	dgPointer->solveShortestPath(7,1);
+	//dgPointer->solveShortestPath(7,1);
+
+	dgPointer->removeNode(1);
+	dgPointer->removeNode(3);
+	dgPointer->removeNode(5);
+	dgPointer->removeNode(7);
+	dgPointer->addNode('W'); //9
+	dgPointer->addNode('X'); //10
+	dgPointer->addNode('Y'); //11
+	dgPointer->addNode('Z'); //12
+
+	dgPointer->printGraph();
+
+
 
 
 	return 0;
