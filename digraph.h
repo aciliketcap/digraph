@@ -4,6 +4,13 @@
  * Light-weight directed graph container
  * Read more about design in aciliketcap.blogger.com
  *
+ * This file is distributed under GNU GPLv3, see LICENSE file.
+ * If you haven't received a file named LICENSE see <http://www.gnu.org/licences>
+ *
+ * This directed map class is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
+ *
+ *
  * Notes:
  * - It uses linked lists to store arcs between nodes. However the linked list
  *   structure is divided between list members (arcLink class) and dgNode class holding
@@ -16,11 +23,6 @@
  *   different places. So if there are more than one identical elements you can't be
  *   sure which one will be removed. If you have more than one arcs from one node to
  *   another (with different weights) you should use removeArcW(src, dest, weight).
- * - Currently nodes are held in a linked list and a vector of node pointers is held
- *   for random access. However new nodes are added to new (higher) memory places. This
- *   results in memory fragmentation when there is a large number of add and remove
- *   operations on nodes. A smart allocation scheme would be to store new nodes in
- *   places left from deleted nodes. But that remains to be implemented...
  */
 
 #ifndef DIGRAPH_H_
